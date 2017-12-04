@@ -38,77 +38,29 @@
 				</a>
 
 				<a href="#" class="simple-text logo-normal">
-					TimeLaps
+                    TimeLapse
 				</a>
 			</div>
 	    	<div class="sidebar-wrapper">
-				<div class="user">
-	                <div class="photo">
-	                    <img src="img/faces/face-2.jpg" />
-	                </div>
-	                <div class="info">
-						<a data-toggle="collapse" href="#collapseExample" class="collapsed">
-	                        <span>
-								Chet Faker
-		                        <b class="caret"></b>
-							</span>
-	                    </a>
-						<div class="clearfix"></div>
-
-	                    <div class="collapse" id="collapseExample">
-	                        <ul class="nav">
-	                            <li>
-									<a href="#profile">
-										<span class="sidebar-mini">Mp</span>
-										<span class="sidebar-normal">My Profile</span>
-									</a>
-								</li>
-	                            <li>
-									<a href="#edit">
-										<span class="sidebar-mini">Ep</span>
-										<span class="sidebar-normal">Edit Profile</span>
-									</a>
-								</li>
-	                            <li>
-									<a href="#settings">
-										<span class="sidebar-mini">S</span>
-										<span class="sidebar-normal">Settings</span>
-									</a>
-								</li>
-	                        </ul>
-	                    </div>
-	                </div>
-	            </div>
 	            <ul class="nav">
-					<li>
-	                    <a data-toggle="collapse" href="#dashboardOverview">
-	                        <i class="ti-panel"></i>
-	                        <p>Collapse
-                                <b class="caret"></b>
-                            </p>
-	                    </a>
-                        <div class="collapse" id="dashboardOverview">
-							<ul class="nav">
-								<li>
-									<a href="#panda">
-										<span class="sidebar-mini">C1</span>
-										<span class="sidebar-normal">Collapse 1</span>
-									</a>
-								</li>
-								<li>
-									<span class="sidebar-mini">C2</span>
-									<span class="sidebar-normal">Collapse 2</span>
-								</li>
-							</ul>
-						</div>
-	                </li>
-
 	                <li>
-	                    <a href="calendar.html">
-	                        <i class="ti-calendar"></i>
-	                        <p>Simple Link</p>
+	                    <a href="createJob.php">
+	                        <i class="ti-plus"></i>
+	                        <p>Create Job</p>
 	                    </a>
 	                </li>
+                    <li>
+                        <a href="currentJob.php">
+                            <i class="ti-reload"></i>
+                            <p>Current Job</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="archive.php">
+                            <i class="ti-archive"></i>
+                            <p>Archive</p>
+                        </a>
+                    </li>
 
 	            </ul>
 	    	</div>
@@ -127,48 +79,7 @@
 	                        <span class="icon-bar bar2"></span>
 	                        <span class="icon-bar bar3"></span>
 	                    </button>
-	                    <a class="navbar-brand" href="#charts">Template</a>
-	                </div>
-	                <div class="collapse navbar-collapse">
-						<form class="navbar-form navbar-left navbar-search-form" role="search">
-	    					<div class="input-group">
-	    						<span class="input-group-addon"><i class="fa fa-search"></i></span>
-	    						<input type="text" value="" class="form-control" placeholder="Search...">
-	    					</div>
-	    				</form>
-	                    <ul class="nav navbar-nav navbar-right">
-	                        <li>
-	                            <a href="#stats" class="dropdown-toggle btn-magnify" data-toggle="dropdown">
-	                                <i class="ti-panel"></i>
-									<p>Stats</p>
-	                            </a>
-	                        </li>
-	                        <li class="dropdown">
-	                            <a href="#notifications" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
-	                                <i class="ti-bell"></i>
-	                                <span class="notification">5</span>
-									<p class="hidden-md hidden-lg">
-										Notifications
-										<b class="caret"></b>
-									</p>
-	                            </a>
-	                            <ul class="dropdown-menu">
-	                                <li><a href="#not1">Notification 1</a></li>
-	                                <li><a href="#not2">Notification 2</a></li>
-	                                <li><a href="#not3">Notification 3</a></li>
-	                                <li><a href="#not4">Notification 4</a></li>
-	                                <li><a href="#another">Another notification</a></li>
-	                            </ul>
-	                        </li>
-							<li>
-	                            <a href="#settings" class="btn-rotate">
-									<i class="ti-settings"></i>
-									<p class="hidden-md hidden-lg">
-										Settings
-									</p>
-	                            </a>
-	                        </li>
-	                    </ul>
+	                    <a class="navbar-brand" href="#charts">TimeLapse</a>
 	                </div>
 	            </div>
 	        </nav>
@@ -188,24 +99,14 @@
 	                <nav class="pull-left">
 	                    <ul>
 	                        <li>
-	                            <a href="http://www.creative-tim.com">
-	                                Creative Tim
-	                            </a>
-	                        </li>
-	                        <li>
-	                            <a href="http://blog.creative-tim.com">
-	                               Blog
-	                            </a>
-	                        </li>
-	                        <li>
-	                            <a href="http://www.creative-tim.com/license">
-	                                Licenses
+	                            <a href="https://sites.google.com/a/gibmit.ch/modul-152-hs2017-q2/">
+	                                Modulwebsite
 	                            </a>
 	                        </li>
 	                    </ul>
 	                </nav>
 	                <div class="copyright pull-right">
-	                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
+	                    &copy; <script>document.write(new Date().getFullYear())</script>, Damian Zehnder & Colin Herzog</a>
 	                </div>
 	            </div>
 	        </footer>

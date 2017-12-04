@@ -45,7 +45,7 @@
                         <p>Create Job</p>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="currentJob.php">
                         <i class="ti-reload"></i>
                         <p>Current Job</p>

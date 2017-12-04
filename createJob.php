@@ -39,7 +39,7 @@
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
-                <li>
+                <li class="active">
                     <a href="createJob.php">
                         <i class="ti-plus"></i>
                         <p>Create Job</p>
@@ -84,7 +84,40 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <!-- your content here -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <form method="#" action="#">
+                                <div class="card-header">
+                                    <h4 class="card-title">
+                                        Create Job
+                                    </h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" placeholder="Name of the Job" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Interval</label>
+                                        <input type="number" placeholder="Intervall (in seconds)" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Start of Job Date/Time</label>
+                                        <input type="text" class="form-control datetimepicker" placeholder="Start"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>End of Job Date/Time</label>
+                                        <input type="text" class="form-control datetimepicker" placeholder="End"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Output Framerate</label>
+                                        <input type="number" placeholder="FPS" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-fill btn-info">Start Job</button>
+                                </div>
+                            </form>
+                        </div> <!-- end card -->
+                    </div> <!--  end col-md-6  -->
 
                 </div>
             </div>

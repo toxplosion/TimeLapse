@@ -51,7 +51,7 @@
                         <p>Current Job</p>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="archive.php">
                         <i class="ti-archive"></i>
                         <p>Archive</p>

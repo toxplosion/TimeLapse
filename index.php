@@ -33,12 +33,12 @@
 			Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
 		-->
 			<div class="logo">
-				<a href="http://www.creative-tim.com" class="simple-text logo-mini">
-					CT
+				<a href="#" class="simple-text logo-mini">
+					M152
 				</a>
 
-				<a href="http://www.creative-tim.com" class="simple-text logo-normal">
-					Creative Tim
+				<a href="#" class="simple-text logo-normal">
+					TimeLaps
 				</a>
 			</div>
 	    	<div class="sidebar-wrapper">

@@ -89,23 +89,23 @@
                                 <div class="card-content">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" placeholder="Name of the Job" class="form-control">
+                                        <input id="name" type="text" placeholder="Name of the Job" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Interval</label>
-                                        <input type="number" placeholder="Intervall (in seconds)" class="form-control">
+                                        <input id="interval" type="number" placeholder="Interval (in seconds)" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Start of Job Date/Time</label>
-                                        <input type="text" class="form-control datetimepicker" placeholder="Start"/>
+                                        <input id="start" type="text" class="form-control datetimepicker" placeholder="Start"/>
                                     </div>
                                     <div class="form-group">
                                         <label>End of Job Date/Time</label>
-                                        <input type="text" class="form-control datetimepicker" placeholder="End"/>
+                                        <input id="stop" type="text" class="form-control datetimepicker" placeholder="End"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Output Framerate</label>
-                                        <input type="number" placeholder="FPS" class="form-control">
+                                        <input id="fps" type="number" placeholder="FPS" class="form-control">
                                     </div>
                                     <button type="submit" class="btn btn-fill btn-info">Start Job</button>
                                 </div>

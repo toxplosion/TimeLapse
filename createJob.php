@@ -80,7 +80,7 @@
 
                     <div class="col-md-6">
                         <div class="card">
-                            <form method="#" action="#">
+                            <form method="post" action="./jobHandler.php">
                                 <div class="card-header">
                                     <h4 class="card-title">
                                         Create Job
@@ -89,23 +89,19 @@
                                 <div class="card-content">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input id="name" type="text" placeholder="Name of the Job" class="form-control">
+                                        <input id="name" name="name" type="text" placeholder="Name of the Job" class="form-control" >
                                     </div>
                                     <div class="form-group">
                                         <label>Interval</label>
-                                        <input id="interval" type="number" placeholder="Interval (in seconds)" class="form-control">
+                                        <input id="interval" name="interval" type="number" placeholder="Interval (in seconds)" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label>Start of Job Date/Time</label>
-                                        <input id="start" type="text" class="form-control datetimepicker" placeholder="Start"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>End of Job Date/Time</label>
-                                        <input id="stop" type="text" class="form-control datetimepicker" placeholder="End"/>
+                                        <label>Duration</label>
+                                        <input id="duration" name="duration" type="number" class="form-control" placeholder="Duration"/>
                                     </div>
                                     <div class="form-group">
                                         <label>Output Framerate</label>
-                                        <input id="fps" type="number" placeholder="FPS" class="form-control">
+                                        <input id="fps" name="fps" type="number" name="duration" placeholder="FPS" class="form-control">
                                     </div>
                                     <button type="submit" class="btn btn-fill btn-info">Start Job</button>
                                 </div>

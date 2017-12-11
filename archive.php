@@ -80,8 +80,12 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-
-
+                    <?php
+                        foreach (new DirectoryIterator('archive') as $file) {
+                            if ($file->isDot()) continue;
+                            echo "<video src='archive/" . $file->getFilename() . "'>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>

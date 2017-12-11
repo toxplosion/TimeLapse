@@ -23,9 +23,41 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="css/themify-icons.css" rel="stylesheet">
+    <script src="js/custom.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#results").load("get_records.php");  //initial page number to load
+            $(".paging_link").bootpag({
+                total: <?php echo $pages; ?>
+            }).on("page", function (e, num) {
+                e.preventDefault();
+                $("#results").prepend('<div class="loading-indication"><img src="ajax-loader.gif" /> Loading...</div>');
+                $("#results").load("get_records.php", {'page': num});
+            });
+        });
+    </script>
+
+
 </head>
 
 <body>
+<?php
+require_once 'pdo.php';
+
+if (isset($_GET['itemsperpage'])) {
+    $item_per_page = intval($_GET['itemsperpage']);
+} else {
+    $item_per_page = 1;
+}
+
+$results = $dbcon->prepare("SELECT COUNT(*) FROM videos");
+$results->execute();
+$get_total_rows = $results->fetch();
+
+//breaking total records into pages
+$pages = ceil($get_total_rows[0] / $item_per_page);
+
+?>
 <div class="wrapper">
     <div class="sidebar" data-background-color="brown" data-active-color="danger">
         <div class="logo">
@@ -78,7 +110,15 @@
             <div class="container-fluid">
                 <div class="row">
 
-                    <!-- your content here -->
+                    <ul class="pagination">
+                        <li><a href=""><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href="">5</a></li>
+                        <li><a href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                    </ul>
 
                 </div>
             </div>

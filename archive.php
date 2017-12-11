@@ -28,10 +28,10 @@
         $(document).ready(function () {
             $("#results").load("get_records.php");  //initial page number to load
             $(".paging_link").bootpag({
-                total: <?php echo $pages; ?>
+                     total: <?php echo $pages; ?>
             }).on("page", function (e, num) {
                 e.preventDefault();
-                $("#results").prepend('<div class="loading-indication"><img src="ajax-loader.gif" /> Loading...</div>');
+                $("#results").prepend('<div class="loading-indication"><img src="img/ajax_loader.gif" /> Loading...</div>');
                 $("#results").load("get_records.php", {'page': num});
             });
         });
@@ -42,7 +42,7 @@
 
 <body>
 <?php
-require_once 'pdo.php';
+require_once 'php/pdo.php';
 
 if (isset($_GET['itemsperpage'])) {
     $item_per_page = intval($_GET['itemsperpage']);

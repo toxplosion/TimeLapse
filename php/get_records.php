@@ -13,7 +13,7 @@ if(isset($_POST["page"])){
 //get current starting point of records
 $position = (($page_number-1) * $item_per_page);
 
-$results = $dbcon->prepare("SELECT * FROM `archive` ORDER BY `id` DESC LIMIT $position, $item_per_page");
+$results = $pdo->prepare("SELECT * FROM `archive` ORDER BY `id` DESC LIMIT $position, $item_per_page");
 $results->execute();
 
 //getting results from database

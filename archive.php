@@ -50,7 +50,7 @@ if (isset($_GET['itemsperpage'])) {
     $item_per_page = 1;
 }
 
-$results = $dbcon->prepare("SELECT COUNT(*) FROM videos");
+$results = $pdo->prepare("SELECT COUNT(*) FROM videos");
 $results->execute();
 $get_total_rows = $results->fetch();
 

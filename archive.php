@@ -23,41 +23,12 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="css/themify-icons.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/custom.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#results").load("php/get_records.php");  //initial page number to load
-            $(".paging_link").bootpag({
-                     total: <?php echo $pages; ?>
-            }).on("page", function (e, num) {
-                e.preventDefault();
-                $("#results").prepend('<div class="loading-indication"><img src="img/ajax_loader.gif" /> Loading...</div>');
-                $("#results").load("get_records.php", {'page': num});
-            });
-        });
-    </script>
-
-
 </head>
 
 <body>
-<?php
-require_once 'php/pdo.php';
-
-if (isset($_GET['itemsperpage'])) {
-    $item_per_page = intval($_GET['itemsperpage']);
-} else {
-    $item_per_page = 1;
-}
-
-$results = $pdo->prepare("SELECT COUNT(*) FROM videos");
-$results->execute();
-$get_total_rows = $results->fetch();
-
-//breaking total records into pages
-$pages = ceil($get_total_rows[0] / $item_per_page);
-
-?>
 <div class="wrapper">
     <div class="sidebar" data-background-color="brown" data-active-color="danger">
         <div class="logo">
@@ -110,15 +81,6 @@ $pages = ceil($get_total_rows[0] / $item_per_page);
             <div class="container-fluid">
                 <div class="row">
 
-                    <ul class="pagination">
-                        <li><a href=""><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
-                        <li><a href="">5</a></li>
-                        <li><a href=""><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
-                    </ul>
 
                 </div>
             </div>
@@ -144,7 +106,6 @@ $pages = ceil($get_total_rows[0] / $item_per_page);
         </footer>
     </div>
 </div>
-<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="js/perfect-scrollbar.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
@@ -159,12 +120,10 @@ $pages = ceil($get_total_rows[0] / $item_per_page);
 <script src="js/bootstrap-notify.js"></script>
 <script src="js/sweetalert2.js"></script>
 <script src="js/jquery-jvectormap.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <script src="js/jquery.bootstrap.wizard.min.js"></script>
 <script src="js/bootstrap-table.js"></script>
 <script src="js/jquery.datatables.js"></script>
 <script src="js/fullcalendar.min.js"></script>
 <script src="js/paper-dashboard.js"></script>
-<script src="js/demo.js"></script>
 </body>
 </html>

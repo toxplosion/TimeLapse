@@ -26,7 +26,7 @@
     <script src="js/custom.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#results").load("get_records.php");  //initial page number to load
+            $("#results").load("php/get_records.php");  //initial page number to load
             $(".paging_link").bootpag({
                      total: <?php echo $pages; ?>
             }).on("page", function (e, num) {

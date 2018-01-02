@@ -80,7 +80,7 @@
 
                     <div class="col-md-6">
                         <div class="card">
-                            <form method="post" action="./jobHandler.php">
+                            <form method="post" action="./requestHandler.php">
                                 <div class="card-header">
                                     <h4 class="card-title">
                                         Create Job

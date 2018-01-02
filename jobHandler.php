@@ -1,53 +1,21 @@
+
 <?php
-/**
- * Created by PhpStorm.
- * User: zehnder
- * Date: 11.12.17
- * Time: 14:22
- */
 
-class JobHandler extends Thread {
+    $properties = unserialize($argv[1]);
 
-    private static $CAMERA_IP = "http://10.142.126.155/";
-    private $name;
-    private $interval;
-    private $duration;
-    private $fps;
+    print_r($properties);
 
-    public function __construct($arg) {
+    $endTime = time() + $properties["duration"];
 
-        $this->name = $arg["name"];
-        $this->interval = $arg["interval"];
-        $this->duration = $arg["duration"];
-        $this->fps = $arg["fps"];
+    while (time() < $endTime) {
+        $startTime = time();
 
+        copy("http://10.142.126.155/cgi-bin/video.jpg", "./tmpImages/".time().".jpg");
 
+        $elapsed = time() - $startTime;
+
+        sleep(($properties["interval"] - $elapsed));
     }
-
-
-
-}
-
-new JobHandler($_POST);
-
-
-
-
-
-
-
-
-while(true) {
-
-
-
-    if ($now+$duration > time()) {
-        break;
-    }
-
-}
-
-http_get($CAMERA_IP)
 
 
 ?>

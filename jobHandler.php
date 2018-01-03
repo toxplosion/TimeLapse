@@ -1,21 +1,35 @@
-
 <?php
 
-    $properties = unserialize($argv[1]);
+$CAMERA_IP = "10.132.1.58";
 
-    print_r($properties);
+$properties = unserialize($argv[1]);
 
-    $endTime = time() + $properties["duration"];
+print_r($properties);
 
-    while (time() < $endTime) {
-        $startTime = time();
+$endTime = time() + $properties["duration"];
 
-        copy("http://10.142.126.155/cgi-bin/video.jpg", "./tmpImages/".time().".jpg");
+$filename = $properties["name"];
+$image = 0;
+while (time() < $endTime) {
+    $startTime = time();
+    $image++;
+    copy("http://" . $CAMERA_IP . "/cgi-bin/video.jpg", "./tmpImages/" . $filename . "_image" . $image . ".jpg");
 
-        $elapsed = time() - $startTime;
+    /*
+     * using this in case if the picture request will take longer than expected
+     */
+    $elapsed = time() - $startTime;
 
-        sleep(($properties["interval"] - $elapsed));
-    }
+    sleep(($properties["interval"] - $elapsed));
+}
 
+/*
+ * convert all images to video
+ */
+exec("ffmpeg -r " . $properties["fps"] . " -f image2 -i ./tmpImages/" . $filename . "_image%d.jpg -vcodec libx264 ./videos/" . $filename . time() . ".mp4");
 
+/*
+ * cleanup afterwards
+ */
+exec("rm ./tmpImages/*");
 ?>

@@ -1,9 +1,9 @@
 # TimeLaps
 
-##Server setup
+## Server setup
 This web application is designed for unix servers only (developed on macOS). 
 In order to be able to convert the pictures in a video, the ffmpeg library was used. Please use following instructions to install ffmpeg.
-###Installing ffmpeg
+### Installing ffmpeg
 - **MacOS:**  
 Using homebrew:  
 `brew install ffmpeg`

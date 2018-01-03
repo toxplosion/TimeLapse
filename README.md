@@ -12,5 +12,5 @@ otherwise download it directly from https://www.ffmpeg.org/
 - **Linux:**  
 Use any package manager to install the package `ffmpeg`. The package names vary in each package manager, please make sure to perform a search prior to installing.
 
-##Hardware
+## Hardware
 - level one FCS-1060

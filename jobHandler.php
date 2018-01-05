@@ -4,16 +4,23 @@ $CAMERA_IP = "10.132.1.58";
 
 $properties = unserialize($argv[1]);
 
-print_r($properties);
+session_id($properties["session"]);
 
+session_start();
+
+$_SESSION["progress"] = true;
+
+session_write_close();
 $endTime = time() + $properties["duration"];
 
 $filename = $properties["name"];
 $image = 0;
-while (time() < $endTime) {
+while (time() < $endTime && file_exists("process.txt")) {
     $startTime = time();
     $image++;
-    copy("http://" . $CAMERA_IP . "/cgi-bin/video.jpg", "./tmpImages/" . $filename . "_image" . $image . ".jpg");
+    //copy("http://" . $CAMERA_IP . "/cgi-bin/video.jpg", "./tmpImages/" . $filename . "_image" . $image . ".jpg");
+    copy("/Users/zehnder/Downloads/space.png", "./tmpImages/" . $filename . "_image" . $image . ".png");
+
 
     /*
      * using this in case if the picture request will take longer than expected
@@ -26,10 +33,16 @@ while (time() < $endTime) {
 /*
  * convert all images to video
  */
-exec("ffmpeg -r " . $properties["fps"] . " -f image2 -i ./tmpImages/" . $filename . "_image%d.jpg -vcodec libx264 ./videos/" . $filename . time() . ".mp4");
+//exec("ffmpeg -r " . $properties["fps"] . " -f image2 -i ./tmpImages/" . $filename . "_image%d.jpg -vcodec libx264 ./videos/" . $filename . time() . ".mp4");
+exec("ffmpeg -r " . $properties["fps"] . " -f image2 -i ./tmpImages/" . $filename . "_image%d.png -vcodec libx264 ./videos/" . $filename . time() . ".mp4");
 
 /*
  * cleanup afterwards
  */
 exec("rm ./tmpImages/*");
+session_id($properties["session"]);
+session_start();
+
+unlink("process.txt");
+$_SESSION["progress"] = false;
 ?>

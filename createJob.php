@@ -1,3 +1,7 @@
+<?php
+
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -80,32 +84,65 @@
 
                     <div class="col-md-6">
                         <div class="card">
-                            <form method="post" action="./requestHandler.php">
-                                <div class="card-header">
-                                    <h4 class="card-title">
-                                        Create Job
-                                    </h4>
-                                </div>
-                                <div class="card-content">
-                                    <div class="form-group">
-                                        <label>Name</label>
-                                        <input id="name" name="name" type="text" placeholder="Name of the Job" class="form-control" >
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Interval</label>
-                                        <input id="interval" name="interval" type="number" placeholder="Interval (in seconds)" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Duration</label>
-                                        <input id="duration" name="duration" type="number" class="form-control" placeholder="Duration"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Output Framerate</label>
-                                        <input id="fps" name="fps" type="number" name="duration" placeholder="FPS" class="form-control">
-                                    </div>
-                                    <button type="submit" class="btn btn-fill btn-info">Start Job</button>
-                                </div>
-                            </form>
+
+                            <?php
+                                if (array_key_exists("progress", $_SESSION)) {
+                                        $_SESSION["test"] = false;
+                                        if ($_SESSION["progress"]) {
+                                            ?>
+                                            <form onsubmit="confirm('The current job will be cancelled and a time lapse will be created with the current data!')" method="post" action="./requestHandler.php">
+                                                <div class="card-header">
+                                                    <h4 class="card-title">
+                                                        Job in Progress...
+                                                    </h4>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="form-group">
+                                                        <progress></progress>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="hidden" name="cancel">
+                                                        <button type="submit" class="btn btn-fill btn-danger">Cancel Job</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <?php
+                                        }
+                                        else {
+                                            ?>
+                                            <form method="post" action="./requestHandler.php">
+                                                <div class="card-header">
+                                                    <h4 class="card-title">
+                                                        Create Job
+                                                    </h4>
+                                                </div>
+                                                <div class="card-content">
+                                                    <div class="form-group">
+                                                        <label>Name</label>
+                                                        <input id="name" name="name" type="text" placeholder="Name of the Job" class="form-control" >
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Interval</label>
+                                                        <input id="interval" name="interval" type="number" placeholder="Interval (in seconds)" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Duration</label>
+                                                        <input id="duration" name="duration" type="number" class="form-control" placeholder="Duration"/>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Output Framerate</label>
+                                                        <input id="fps" name="fps" type="number" placeholder="FPS" class="form-control">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-fill btn-info">Start Job</button>
+                                                </div>
+                                            </form>
+                                            <?php
+
+                                        }
+                                }
+                            ?>
+
+
                         </div> <!-- end card -->
                     </div> <!--  end col-md-6  -->
 

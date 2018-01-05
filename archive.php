@@ -89,6 +89,7 @@
                     $counter = 0;
                     foreach (new DirectoryIterator('videos') as $file) {
                         if ($file->isDot()) continue;
+                        if ($file->getFilename() == ".gitignore") continue;
                         $videos["'" . $counter . "'"] = $file->getFilename();
                         $counter++;
                     }
@@ -101,6 +102,8 @@
 
                     ?>
 
+                    <?php if (count($videos) > 0) { ?>
+
                     <?php if ($prev >= 0): ?>
                         <a class="btn btn-default" href="<?php echo "archive.php?key=" . $prev; ?>">Previous</a>
                     <?php endif; ?>
@@ -111,9 +114,11 @@
 
                     <div align="center" class="embed-responsive embed-responsive-16by9">
                         <video class="embed-responsive-item" controls>
-                            <source src="archive/<?php echo $videos["'" . $key . "'"]; ?>" type="video/mp4">
+                            <source src="videos/<?php echo $videos["'" . $key . "'"]; ?>" type="video/mp4">
                         </video>
                     </div>
+
+                    <?php } else { echo "No Video found"; }?>
 
                 </div>
             </div>

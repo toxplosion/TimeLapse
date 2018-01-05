@@ -1,9 +1,5 @@
 <?php
 
-session_start();
-
-$_POST["session"] = session_id();
-
 if (array_key_exists("cancel", $_POST)) {
 
     unlink("process.txt");

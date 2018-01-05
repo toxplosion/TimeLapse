@@ -4,13 +4,6 @@ $CAMERA_IP = "10.132.1.58";
 
 $properties = unserialize($argv[1]);
 
-session_id($properties["session"]);
-
-session_start();
-
-$_SESSION["progress"] = true;
-
-session_write_close();
 $endTime = time() + $properties["duration"];
 
 $filename = $properties["name"];
@@ -38,9 +31,6 @@ exec("ffmpeg -r " . $properties["fps"] . " -f image2 -i ./tmpImages/" . $filenam
  * cleanup afterwards
  */
 exec("rm ./tmpImages/*");
-session_id($properties["session"]);
-session_start();
 
 unlink("process.txt");
-$_SESSION["progress"] = false;
 ?>

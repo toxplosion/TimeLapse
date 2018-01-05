@@ -18,8 +18,7 @@ $image = 0;
 while (time() < $endTime && file_exists("process.txt")) {
     $startTime = time();
     $image++;
-    //copy("http://" . $CAMERA_IP . "/cgi-bin/video.jpg", "./tmpImages/" . $filename . "_image" . $image . ".jpg");
-    copy("/Users/zehnder/Downloads/space.png", "./tmpImages/" . $filename . "_image" . $image . ".png");
+    copy("http://" . $CAMERA_IP . "/cgi-bin/video.jpg", "./tmpImages/" . $filename . "_image" . $image . ".jpg");
 
 
     /*
@@ -33,8 +32,7 @@ while (time() < $endTime && file_exists("process.txt")) {
 /*
  * convert all images to video
  */
-//exec("ffmpeg -r " . $properties["fps"] . " -f image2 -i ./tmpImages/" . $filename . "_image%d.jpg -vcodec libx264 ./videos/" . $filename . time() . ".mp4");
-exec("ffmpeg -r " . $properties["fps"] . " -f image2 -i ./tmpImages/" . $filename . "_image%d.png -vcodec libx264 ./videos/" . $filename . time() . ".mp4");
+exec("ffmpeg -r " . $properties["fps"] . " -f image2 -i ./tmpImages/" . $filename . "_image%d.jpg -vcodec libx264 ./videos/" . $filename . time() . ".mp4");
 
 /*
  * cleanup afterwards

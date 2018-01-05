@@ -80,12 +80,41 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
+                    <div id="pagination-nav"></div>
+                </div>
+                <div class="row">
+                    <div id="pagination-content"></div>
                     <?php
-                        foreach (new DirectoryIterator('archive') as $file) {
-                            if ($file->isDot()) continue;
-                            echo "<video src='archive/" . $file->getFilename() . "'>";
-                        }
+                    $videos = array();
+                    $counter = 0;
+                    foreach (new DirectoryIterator('videos') as $file) {
+                        if ($file->isDot()) continue;
+                        $videos["'" . $counter . "'"] = $file->getFilename();
+                        $counter++;
+                    }
+                    if (!isset($_GET['key'])) {
+                        $_GET['key'] = 0;
+                    }
+                    $key = $_GET['key'];
+                    $next = $key + 1;
+                    $prev = $key - 1;
+
                     ?>
+
+                    <?php if ($prev >= 0): ?>
+                        <a class="btn btn-default" href="<?php echo "archive.php?key=" . $prev; ?>">Previous</a>
+                    <?php endif; ?>
+
+                    <?php if ($next < count($videos)): ?>
+                        <a class="btn btn-default" href="<?php echo "archive.php?key=" . $next; ?>">Next</a>
+                    <?php endif; ?>
+
+                    <div align="center" class="embed-responsive embed-responsive-16by9">
+                        <video class="embed-responsive-item" controls>
+                            <source src="archive/<?php echo $videos["'" . $key . "'"]; ?>" type="video/mp4">
+                        </video>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -6,8 +6,8 @@ In order to be able to convert the pictures in a video, the ffmpeg library was u
 ### Installing ffmpeg
 - **MacOS:**  
 Using homebrew:  
-`brew install ffmpeg`
-otherwise download it directly from https://www.ffmpeg.org/
+`brew install ffmpeg`  
+Otherwise download it directly from https://www.ffmpeg.org/
 
 - **Linux:**  
 Use any package manager to install the package `ffmpeg`. The package names vary in each package manager, please make sure to perform a search prior to installing.

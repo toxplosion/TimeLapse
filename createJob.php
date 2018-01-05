@@ -87,7 +87,6 @@ session_start();
 
                             <?php
                                 if (array_key_exists("progress", $_SESSION)) {
-                                        $_SESSION["test"] = false;
                                         if ($_SESSION["progress"]) {
                                             ?>
                                             <form onsubmit="confirm('The current job will be cancelled and a time lapse will be created with the current data!')" method="post" action="./requestHandler.php">

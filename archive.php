@@ -88,8 +88,9 @@
                     $videos = array();
                     $counter = 0;
                     foreach (new DirectoryIterator('videos') as $file) {
+                        $fileinfo=pathinfo($file);
                         if ($file->isDot()) continue;
-                        if ($file->getFilename() == ".gitignore") continue;
+                        if ($fileinfo['extension'] != "mp4") continue;
                         $videos["'" . $counter . "'"] = $file->getFilename();
                         $counter++;
                     }

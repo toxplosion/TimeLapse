@@ -4,7 +4,6 @@
     <meta charset="utf-8"/>
     <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
     <title>TimeLapse - M152</title>
 
@@ -160,7 +159,7 @@
                 <div class="copyright pull-right">
                     &copy;
                     <script>document.write(new Date().getFullYear())</script>
-                    , Damian Zehnder & Colin Herzog</a>
+                    , Damian Zehnder & Colin Herzog
                 </div>
             </div>
         </footer>

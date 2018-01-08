@@ -100,10 +100,9 @@
                     $key = $_GET['key'];
                     $next = $key + 1;
                     $prev = $key - 1;
-
                     ?>
 
-                    <?php if (count($videos) > 0) { ?>
+                    <?php if (count($videos) > 0 && count($videos)-1 >= $key && $key >= 0) { ?>
 
                     <?php if ($prev >= 0): ?>
                         <a class="btn btn-default" href="<?php echo "archive.php?key=" . $prev; ?>">Previous</a>

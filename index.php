@@ -119,7 +119,6 @@
 <script src="js/bootstrap-notify.js"></script>
 <script src="js/sweetalert2.js"></script>
 <script src="js/jquery-jvectormap.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <script src="js/jquery.bootstrap.wizard.min.js"></script>
 <script src="js/bootstrap-table.js"></script>
 <script src="js/jquery.datatables.js"></script>

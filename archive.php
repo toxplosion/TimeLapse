@@ -111,7 +111,7 @@
                         <a class="btn btn-default" href="<?php echo "archive.php?key=" . $next; ?>">Next</a>
                     <?php endif; ?>
 
-                    <div align="center" class="embed-responsive embed-responsive-16by9">
+                    <div class="embed-responsive embed-responsive-16by9">
                         <video class="embed-responsive-item" controls>
                             <source src="videos/<?php echo $videos["'" . $key . "'"]; ?>" type="video/mp4">
                         </video>

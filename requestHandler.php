@@ -6,11 +6,21 @@ if (array_key_exists("cancel", $_POST)) {
 
 } else {
 
-    file_put_contents("process.txt", "running");
-    /*
-     * execute php script in background and redirect to index
-     */
-    exec("php jobHandler.php " . escapeshellarg(serialize($_POST)) . " > /dev/null &");
+    if (file_exists("process.txt")) {
+
+        header("Location: ./index.php?running=true");
+
+    } else {
+
+        /*
+        * execute php script in background and redirect to index
+        */
+        exec("php jobHandler.php " . escapeshellarg(serialize($_POST)) . " > /dev/null & echo $!", $pid);
+
+        file_put_contents("process.txt", $pid);
+    }
+
+
 
 }
 

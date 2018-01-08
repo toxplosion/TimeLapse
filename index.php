@@ -125,5 +125,17 @@
 <script src="js/fullcalendar.min.js"></script>
 <script src="js/paper-dashboard.js"></script>
 <script src="js/demo.js"></script>
+<?php
+
+if (array_key_exists("running", $_GET)) {
+    ?>
+    <script>
+        alert("Timelapse already running. Please try again later...");
+    </script>
+
+    <?php
+}
+
+?>
 </body>
 </html>
